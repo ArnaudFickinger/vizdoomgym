@@ -23,11 +23,12 @@ CONFIGS = [
     ["take_cover.cfg", 2],  # 7
     ["deathmatch.cfg", 20],  # 8
     ["health_gathering_supreme.cfg", 3],  # 9
+    ["deadly_corridor_sparse.cfg", 7],  # 10
 ]
 
 
 class VizdoomEnv(gym.Env):
-    def __init__(self, level, **kwargs):
+    def __init__(self, level, no_reward=False, **kwargs):
         """
         Base class for Gym interface for ViZDoom. Child classes are defined in vizdoom_env_definitions.py,
         that contain the level parameter and pass through any kwargs from gym.make()
@@ -43,6 +44,7 @@ class VizdoomEnv(gym.Env):
         self.labels = kwargs.get("labels", False)
         self.position = kwargs.get("position", False)
         self.health = kwargs.get("health", False)
+        self.no_reward = no_reward
 
         # init game
         self.game = vzd.DoomGame()
@@ -117,6 +119,9 @@ class VizdoomEnv(gym.Env):
         self.state = self.game.get_state()
         done = self.game.is_episode_finished()
         info = {"dummy": 0.0}
+
+        if self.no_reward:
+            reward = 0
 
         return self.__collect_observations(), reward, done, info
 

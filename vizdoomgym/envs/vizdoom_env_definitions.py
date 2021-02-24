@@ -11,6 +11,11 @@ class VizdoomCorridor(VizdoomEnv):
         super(VizdoomCorridor, self).__init__(1, **kwargs)
 
 
+class VizdoomCorridorSparse(VizdoomEnv):
+    def __init__(self, **kwargs):
+        super(VizdoomCorridorSparse, self).__init__(10, **kwargs)
+
+
 class VizdoomDeathmatch(VizdoomEnv):
     def __init__(self, **kwargs):
         super(VizdoomDeathmatch, self).__init__(8, **kwargs)
