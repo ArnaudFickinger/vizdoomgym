@@ -5,12 +5,12 @@ import numpy as np
 import os
 from typing import List
 
-turn_off_rendering = False
-try:
-    from gym.envs.classic_control import rendering
-except Exception as e:
-    print(e)
-    turn_off_rendering = True
+# turn_off_rendering = False
+# try:
+#     from gym.envs.classic_control import rendering
+# except Exception as e:
+#     print(e)
+#     turn_off_rendering = True
 
 CONFIGS = [
     ["basic.cfg", 3],  # 0
@@ -159,18 +159,20 @@ class VizdoomEnv(gym.Env):
         return observation
 
     def render(self, mode="human"):
-        if turn_off_rendering:
-            return
-        try:
-            img = self.game.get_state().screen_buffer
-            img = np.transpose(img, [1, 2, 0])
-            if mode=="rgb_array":
-                return img
-            if self.viewer is None:
-                self.viewer = rendering.SimpleImageViewer()
-            self.viewer.imshow(img)
-        except AttributeError:
-            pass
+        # if turn_off_rendering:
+        #     return
+        # try:
+
+        img = self.game.get_state().screen_buffer
+        img = np.transpose(img, [1, 2, 0])
+        if mode=="rgb_array":
+            return img
+
+        # if self.viewer is None:
+        #     self.viewer = rendering.SimpleImageViewer()
+        # self.viewer.imshow(img)
+        # # except AttributeError:
+        # #     pass
         
     def close(self):
         if self.viewer:
