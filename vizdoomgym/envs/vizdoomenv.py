@@ -164,7 +164,8 @@ class VizdoomEnv(gym.Env):
         try:
             img = self.game.get_state().screen_buffer
             img = np.transpose(img, [1, 2, 0])
-
+            if mode=="rgb_array":
+                return img
             if self.viewer is None:
                 self.viewer = rendering.SimpleImageViewer()
             self.viewer.imshow(img)
