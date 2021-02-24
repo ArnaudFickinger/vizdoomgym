@@ -121,6 +121,7 @@ class VizdoomEnv(gym.Env):
         done = self.game.is_episode_finished()
         # info = {"dummy": 0.0}
         info = {self.info_str[i]: self.state.game_variables[i] for i in range(5)}
+        info.update({'env_reward': reward})
 
         if self.no_reward:
             reward = 0
