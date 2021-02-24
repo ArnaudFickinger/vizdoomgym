@@ -55,13 +55,14 @@ class VizdoomEnv(gym.Env):
         self.game.set_depth_buffer_enabled(self.depth)
         self.game.set_labels_buffer_enabled(self.labels)
         self.game.clear_available_game_variables()
-        if self.position:
-            self.game.add_available_game_variable(vzd.GameVariable.POSITION_X)
-            self.game.add_available_game_variable(vzd.GameVariable.POSITION_Y)
-            self.game.add_available_game_variable(vzd.GameVariable.POSITION_Z)
-            self.game.add_available_game_variable(vzd.GameVariable.ANGLE)
-        if self.health:
-            self.game.add_available_game_variable(vzd.GameVariable.HEALTH)
+        # if self.position:
+        self.game.add_available_game_variable(vzd.GameVariable.POSITION_X)
+        self.game.add_available_game_variable(vzd.GameVariable.POSITION_Y)
+        self.game.add_available_game_variable(vzd.GameVariable.POSITION_Z)
+        self.game.add_available_game_variable(vzd.GameVariable.ANGLE)
+        # if self.health:
+        self.game.add_available_game_variable(vzd.GameVariable.HEALTH)
+        self.info_str = ["position_x","position_y","position_z","angle","health"]
         self.game.init()
         self.state = None
         self.viewer = None
@@ -118,7 +119,8 @@ class VizdoomEnv(gym.Env):
         reward = self.game.make_action(act)
         self.state = self.game.get_state()
         done = self.game.is_episode_finished()
-        info = {"dummy": 0.0}
+        # info = {"dummy": 0.0}
+        info = {self.info_str[i]: self.state.game_variables[i] for i in range(5)}
 
         if self.no_reward:
             reward = 0
