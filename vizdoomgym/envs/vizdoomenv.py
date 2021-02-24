@@ -56,6 +56,7 @@ class VizdoomEnv(gym.Env):
         self.game.set_labels_buffer_enabled(self.labels)
         self.game.clear_available_game_variables()
         # if self.position:
+        import pdb; pdb.set_trace()
         self.game.add_available_game_variable(vzd.GameVariable.POSITION_X)
         self.game.add_available_game_variable(vzd.GameVariable.POSITION_Y)
         self.game.add_available_game_variable(vzd.GameVariable.POSITION_Z)
