@@ -1,19 +1,32 @@
 from vizdoomgym.envs.vizdoomenv import VizdoomEnv
 
-
 class VizdoomBasic(VizdoomEnv):
     def __init__(self, **kwargs):
         super(VizdoomBasic, self).__init__(0, **kwargs)
 
-
-class VizdoomCorridor(VizdoomEnv):
+class VizdoomCorridor5(VizdoomEnv):
     def __init__(self, no_reward, **kwargs):
-        super(VizdoomCorridor, self).__init__(1, no_reward=no_reward, **kwargs)
+        super(VizdoomCorridor5, self).__init__(1, no_reward=no_reward, **kwargs)
 
-
-class VizdoomCorridorSparse(VizdoomEnv):
+class VizdoomCorridor1(VizdoomEnv):
     def __init__(self, no_reward, **kwargs):
-        super(VizdoomCorridorSparse, self).__init__(10, no_reward=no_reward, **kwargs)
+        super(VizdoomCorridor1, self).__init__(12, no_reward=no_reward, **kwargs)
+
+class VizdoomCorridor3(VizdoomEnv):
+    def __init__(self, no_reward, **kwargs):
+        super(VizdoomCorridor3, self).__init__(13, no_reward=no_reward, **kwargs)
+
+class VizdoomCorridor7(VizdoomEnv):
+    def __init__(self, no_reward, **kwargs):
+        super(VizdoomCorridor7, self).__init__(14, no_reward=no_reward, **kwargs)
+
+class VizdoomCorridorSparse5(VizdoomEnv):
+    def __init__(self, no_reward, **kwargs):
+        super(VizdoomCorridorSparse5, self).__init__(10, no_reward=no_reward, **kwargs)
+
+class VizdoomCorridorSparse1(VizdoomEnv):
+    def __init__(self, no_reward, **kwargs):
+        super(VizdoomCorridorSparse1, self).__init__(11, no_reward=no_reward, **kwargs)
 
 
 class VizdoomDeathmatch(VizdoomEnv):

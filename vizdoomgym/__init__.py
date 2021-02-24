@@ -6,12 +6,29 @@ register(
 )
 
 register(
-    id='VizdoomCorridor-v0',
+    id='VizdoomCorridor-v5',
+    entry_point='vizdoomgym.envs:VizdoomCorridor'
+)
+register(
+    id='VizdoomCorridor-v1',
+    entry_point='vizdoomgym.envs:VizdoomCorridor'
+)
+register(
+    id='VizdoomCorridor-v3',
+    entry_point='vizdoomgym.envs:VizdoomCorridor'
+)
+register(
+    id='VizdoomCorridor-v7',
     entry_point='vizdoomgym.envs:VizdoomCorridor'
 )
 
 register(
-    id='VizdoomCorridorSparse-v0',
+    id='VizdoomCorridorSparse-v5',
+    entry_point='vizdoomgym.envs:VizdoomCorridorSparse'
+)
+
+register(
+    id='VizdoomCorridorSparse-v1',
     entry_point='vizdoomgym.envs:VizdoomCorridorSparse'
 )
 

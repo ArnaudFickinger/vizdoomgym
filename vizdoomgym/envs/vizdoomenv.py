@@ -24,6 +24,10 @@ CONFIGS = [
     ["deathmatch.cfg", 20],  # 8
     ["health_gathering_supreme.cfg", 3],  # 9
     ["deadly_corridor_sparse.cfg", 7],  # 10
+    ["deadly_corridor_sparse_1.cfg", 7],  # 11
+    ["deadly_corridor_1.cfg", 7],  # 12
+    ["deadly_corridor_3.cfg", 7],  # 13
+    ["deadly_corridor_7.cfg", 7],  # 14
 ]
 
 
