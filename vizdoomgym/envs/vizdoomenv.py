@@ -56,7 +56,7 @@ class VizdoomEnv(gym.Env):
         self.game.set_labels_buffer_enabled(self.labels)
         self.game.clear_available_game_variables()
         # if self.position:
-        import pdb; pdb.set_trace()
+        # import pdb; pdb.set_trace()
         self.game.add_available_game_variable(vzd.GameVariable.POSITION_X)
         self.game.add_available_game_variable(vzd.GameVariable.POSITION_Y)
         self.game.add_available_game_variable(vzd.GameVariable.POSITION_Z)
@@ -121,6 +121,7 @@ class VizdoomEnv(gym.Env):
         self.state = self.game.get_state()
         done = self.game.is_episode_finished()
         # info = {"dummy": 0.0}
+        import pdb; pdb.set_trace()
         info = {self.info_str[i]: self.state.game_variables[i] for i in range(5)}
         info.update({'env_reward': reward})
 
