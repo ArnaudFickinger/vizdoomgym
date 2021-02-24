@@ -7,13 +7,13 @@ class VizdoomBasic(VizdoomEnv):
 
 
 class VizdoomCorridor(VizdoomEnv):
-    def __init__(self, **kwargs):
-        super(VizdoomCorridor, self).__init__(1, **kwargs)
+    def __init__(self, no_reward, **kwargs):
+        super(VizdoomCorridor, self).__init__(1, no_reward=no_reward, **kwargs)
 
 
 class VizdoomCorridorSparse(VizdoomEnv):
-    def __init__(self, **kwargs):
-        super(VizdoomCorridorSparse, self).__init__(10, **kwargs)
+    def __init__(self, no_reward, **kwargs):
+        super(VizdoomCorridorSparse, self).__init__(10, no_reward=no_reward, **kwargs)
 
 
 class VizdoomDeathmatch(VizdoomEnv):

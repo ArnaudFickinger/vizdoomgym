@@ -11,6 +11,11 @@ register(
 )
 
 register(
+    id='VizdoomCorridorSparse-v0',
+    entry_point='vizdoomgym.envs:VizdoomCorridorSparse'
+)
+
+register(
     id='VizdoomDefendCenter-v0',
     entry_point='vizdoomgym.envs:VizdoomDefendCenter'
 )
