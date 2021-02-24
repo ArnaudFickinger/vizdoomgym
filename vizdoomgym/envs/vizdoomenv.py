@@ -121,7 +121,7 @@ class VizdoomEnv(gym.Env):
         self.state = self.game.get_state()
         done = self.game.is_episode_finished()
         # info = {"dummy": 0.0}
-        import pdb; pdb.set_trace()
+        # import pdb; pdb.set_trace()
         info = {self.info_str[i]: self.state.game_variables[i] for i in range(5)}
         info.update({'env_reward': reward})
 
