@@ -7,29 +7,29 @@ register(
 
 register(
     id='VizdoomCorridor-v5',
-    entry_point='vizdoomgym.envs:VizdoomCorridor'
+    entry_point='vizdoomgym.envs:VizdoomCorridor5'
 )
 register(
     id='VizdoomCorridor-v1',
-    entry_point='vizdoomgym.envs:VizdoomCorridor'
+    entry_point='vizdoomgym.envs:VizdoomCorridor1'
 )
 register(
     id='VizdoomCorridor-v3',
-    entry_point='vizdoomgym.envs:VizdoomCorridor'
+    entry_point='vizdoomgym.envs:VizdoomCorridor3'
 )
 register(
     id='VizdoomCorridor-v7',
-    entry_point='vizdoomgym.envs:VizdoomCorridor'
+    entry_point='vizdoomgym.envs:VizdoomCorridor7'
 )
 
 register(
     id='VizdoomCorridorSparse-v5',
-    entry_point='vizdoomgym.envs:VizdoomCorridorSparse'
+    entry_point='vizdoomgym.envs:VizdoomCorridorSparse5'
 )
 
 register(
     id='VizdoomCorridorSparse-v1',
-    entry_point='vizdoomgym.envs:VizdoomCorridorSparse'
+    entry_point='vizdoomgym.envs:VizdoomCorridorSparse1'
 )
 
 register(
